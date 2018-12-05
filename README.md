@@ -1,8 +1,6 @@
 Kurulum
 ============
 
-## Sanal Makine (Vagrant)
-
 Sırasıyla aşağıdaki yazılımlar kurulmalı ve github token üretilmelidir.
 
 1. [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -14,7 +12,7 @@ Sırasıyla aşağıdaki yazılımlar kurulmalı ve github token üretilmelidir.
 ```bash
 vagrant plugin install vagrant-hostmanager
 git clone https://github.com/kouosl/portal.git portal 
-git clone https://github.com/kouosl/vagrant-portal.git
+git clone https://github.com/kouosl/vagrant-portal.git vagrant-portal
 ```
 
 6. Aşağıdaki dizinde bulunan vagrant-local.example.yml dosyasının vagrant-local.yml adıyla kopyası oluşturulmalıdır. 

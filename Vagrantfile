@@ -2,9 +2,7 @@ require 'yaml'
 require 'fileutils'
 
 domains = {
-  frontend: 'portal.kouosl',
-  backend:  'portal.kouosl/admin',
-  api:  'portal.kouosl/api'
+  portal: 'portal.kouosl'
 }
 
 config = {
