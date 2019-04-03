@@ -17,7 +17,7 @@ git clone https://github.com/kouosl/vagrant-portal.git vagrant-portal
 
 6. Aşağıdaki dizinde bulunan vagrant-local.example.yml dosyasının vagrant-local.yml adıyla kopyası oluşturulmalıdır. 
 ```
-@vagrant-portal/vagrant/config 
+@vagrant-portal/config 
 ```
 
 7. GitHub api tokenı `vagrant-local.yml` dosyasında aşağıdaki şekilde tanımlanmalıdır.
