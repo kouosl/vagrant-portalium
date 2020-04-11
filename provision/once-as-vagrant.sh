@@ -31,8 +31,8 @@ info "Init project"
 php init --env=Development --overwrite=All
 
 info "Apply migrations"
-php yii migrate --migrationPath=@vendor/portalium/portalium-user/migrations --interactive=0
-php yii migrate --migrationPath=@vendor/portalium/portalium-site/migrations --interactive=0
+php yii migrate --migrationPath=@vendor/portalium/portalium-user/src/migrations --interactive=0
+php yii migrate --migrationPath=@vendor/portalium/portalium-site/src/migrations --interactive=0
 
 info "Enabling colorized prompt for guest console"
 sed -i "s/#force_color_prompt=yes/force_color_prompt=yes/" /home/vagrant/.bashrc
