@@ -1,7 +1,5 @@
 # Your personal GitHub token
-github_token: <your-personal-github-token>
-# Read more: https://github.com/blog/1509-personal-api-tokens
-# You can generate it here: https://github.com/settings/tokens
+github_token: your-personal-github-token
 
 # Guest OS timezone
 timezone: Europe/London
@@ -10,7 +8,7 @@ timezone: Europe/London
 box_check_update: false
 
 # Virtual machine name
-machine_name: kouosl
+machine_name: portalium
 
 # Virtual machine IP
 ip: 192.168.83.137

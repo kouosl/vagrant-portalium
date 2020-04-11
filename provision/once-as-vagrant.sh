@@ -24,17 +24,15 @@ info "Install plugins for composer"
 composer global require "fxp/composer-asset-plugin:^1.3.1" --no-progress
 
 info "Install project dependencies"
-cd /var/www/portal
+cd /var/www/portalium
 composer --no-progress --prefer-dist install
 
 info "Init project"
 php init --env=Development --overwrite=All
 
 info "Apply migrations"
-php yii migrate --migrationPath=@vendor/kouosl/portal-user/migrations --interactive=0
-php yii migrate --migrationPath=@vendor/kouosl/portal-site/migrations --interactive=0
-php yii migrate --migrationPath=@vendor/kouosl/portal-content/migrations --interactive=0
-php yii migrate --migrationPath=@vendor/kouosl/portal-menu/migrations --interactive=0
+php yii migrate --migrationPath=@vendor/portalium/portalium-user/migrations --interactive=0
+php yii migrate --migrationPath=@vendor/portalium/portalium-site/migrations --interactive=0
 
 info "Enabling colorized prompt for guest console"
 sed -i "s/#force_color_prompt=yes/force_color_prompt=yes/" /home/vagrant/.bashrc

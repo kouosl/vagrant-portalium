@@ -11,8 +11,8 @@ Sırasıyla aşağıdaki yazılımlar kurulmalı ve github token üretilmelidir.
    
 ```bash
 vagrant plugin install vagrant-hostmanager
-git clone https://github.com/kouosl/portal.git portal 
-git clone https://github.com/kouosl/vagrant-portal.git vagrant-portal
+git clone https://github.com/kouosl/portalium-kickstarter.git portalium
+git clone https://github.com/kouosl/vagrant-portalium.git vagrant-portalium
 ```
 
 6. Aşağıdaki dizinde bulunan vagrant-local.example.yml dosyasının vagrant-local.yml adıyla kopyası oluşturulmalıdır. 
@@ -33,9 +33,9 @@ vagrant up
 ```
    
 Vagrant makina kurulumu tamamlandıktan sonra aşağıdaki bağlantılardan uygulamaya erişilebilir.
-* frontend: http://portal.kouosl/ 
-* backend: http://portal.kouosl//admin
-* api: http://portal.kouosl/api
+* frontend: http://portalium/
+* backend: http://portalium/admin
+* api: http://portalium/api
 
 Terminal'den (komut satırı) sanal makinaya SSH erişimi için;
 ```bash
@@ -46,3 +46,8 @@ Hariçi bir programla (putty vb.) ssh bağlantısı için bilgiler;
 * ip : 192.168.83.137
 * user : vagrant
 * password : vagrant
+
+Private key ile bağlatı için;
+```bash
+ssh -i ~/.vagrant/machines/portalium/virtualbox/private_key vagrant@portalium
+```

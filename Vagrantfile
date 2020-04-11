@@ -2,7 +2,7 @@ require 'yaml'
 require 'fileutils'
 
 domains = {
-  portal: 'portal.kouosl'
+  portal: 'portalium'
 }
 
 config = {
@@ -17,7 +17,7 @@ options = YAML.load_file config[:local]
 
 # check github token
 if options['github_token'].nil? || options['github_token'].to_s.length != 40
-  puts "You must place REAL GitHub token into configuration:\n/portal/vagrant/config/vagrant-local.yml"
+  puts "You must place REAL GitHub token into configuration:\n/portalium/vagrant/config/vagrant-local.yml"
   exit
 end
 
@@ -47,17 +47,11 @@ Vagrant.configure(2) do |config|
   # network settings
   config.vm.network 'private_network', ip: options['ip']
 
-  # sync: folder 'portal' (host machine) -> folder '/var/www/portal' (guest machine)
-  config.vm.synced_folder '../portal', '/var/www/portal', id: "vagrant-portal",
+  # sync: folder 'portalium' (host machine) -> folder '/var/www/portalium' (guest machine)
+  config.vm.synced_folder '../portalium', '/var/www/portalium', id: "vagrant-portal",
     owner: "vagrant",
     group: "www-data",
     mount_options: ["dmode=775,fmode=664"]
-    
-  # sync: folder '../dev' (host machine) -> folder '/var/www/dev' (guest machine)
-  #config.vm.synced_folder '../dev', '/var/www/dev', id: "vagrant-dev",
-  # owner: "vagrant",
-  # group: "www-data",
-  # mount_options: ["dmode=775,fmode=664"]
 
   # disable folder '/vagrant' (guest machine)
   config.vm.synced_folder '.', '/vagrant'
@@ -74,7 +68,4 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'shell', path: './provision/once-as-root.sh', args: [options['timezone']]
   config.vm.provision 'shell', path: './provision/once-as-vagrant.sh', args: [options['github_token']], privileged: false
   config.vm.provision 'shell', path: './provision/always-as-root.sh', run: 'always'
-
-  # post-install message (vagrant console)
-  config.vm.post_up_message = "Frontend URL: http://#{domains[:frontend]}\nBackend URL: http://#{domains[:backend]}\nApi URL: http://#{domains[:api]} "
 end

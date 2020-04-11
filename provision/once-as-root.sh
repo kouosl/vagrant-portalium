@@ -59,7 +59,7 @@ a2enmod php7.0
 a2enmod rewrite
 
 info "Initailize databases for MySQL"
-mysql -uroot <<< "CREATE DATABASE kouosl"
+mysql -uroot <<< "CREATE DATABASE portalium"
 echo "Done!"
 
 info "Install composer"
