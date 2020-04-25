@@ -49,5 +49,5 @@ Hariçi bir programla (putty vb.) ssh bağlantısı için bilgiler;
 
 Private key ile bağlatı için;
 ```bash
-ssh -i ~/.vagrant/machines/portalium/virtualbox/private_key vagrant@portalium
+ssh -i .vagrant/machines/portalium/virtualbox/private_key vagrant@portalium
 ```
